@@ -1,9 +1,8 @@
 ---
 title: "Bad Drivers Analysis"
 date: 2020-02-22
-tags: [Python, data science, Machine Learning, Analysis, Driving]
 header:
-  image: "/images/cars.jpg"
+  image: "/images/parker.jpg"
   caption: "Photo credit: Disney Movie Cars"
 classes: wide
 excerpt: "This project analyzes a dataset from Dear Mona, Which State Has The Worst Drivers? Article"
