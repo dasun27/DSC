@@ -1,4 +1,6 @@
 ---
+layout: home
+author_profile: true
 title: "About Me"
 permalink: /about/
 header:
