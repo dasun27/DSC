@@ -97,11 +97,11 @@ author:
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "A Network Engineer's attempt to learn analytics"
   location         : "Parker, CO"
-  email            : 
+  email            :
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-       url: "wdbandara@my365.bellevue.edu"
+       url: "mailto:wdbandara@my365.bellevue.edu"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
