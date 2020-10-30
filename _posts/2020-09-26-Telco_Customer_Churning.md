@@ -131,8 +131,8 @@ print("Precision:",metrics.precision_score(y_test, y_pred))
 print("Recall:",metrics.recall_score(y_test, y_pred))
 ```
 
-> Accuracy: 0.7853492333901193
-> Precision: 0.6190476190476191
+> Accuracy: 0.7853492333901193  
+> Precision: 0.6190476190476191  
 > Recall: 0.4773218142548596
 
 • Next, I tried a KNN classifier. I tried a few different K values but k=5 seemed to be the optimal.  
