@@ -2,7 +2,7 @@
 title: "Web Scraping"
 date: 2020-01-01
 classes: wide
-excerpt: "This project analyzes a dataset from Dear Mona, Which State Has The Worst Drivers? Article"
+excerpt: "This paper is about web scraping using LXML and Requests packages."
 ---
 
 You can find the full report here [Web Scraping](https://github.com/dasun27/DSC/blob/master/files/Web%20Scraping.pdf)
