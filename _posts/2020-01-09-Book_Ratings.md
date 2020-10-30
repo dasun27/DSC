@@ -4,7 +4,7 @@ date: 2020-01-09
 header:
   image: "/images/parker.jpg"
 classes: wide
-excerpt: "This project analyzes a dataset from Dear Mona, Which State Has The Worst Drivers? Article"
+excerpt: "This paper is about analyzing a dataset of Book Ratings"
 ---
 
 You can find the full report here [Book Rating Analysis](https://github.com/dasun27/DSC/blob/master/files/Project_2_Report_Dasun_Wellawalage.pdf)
