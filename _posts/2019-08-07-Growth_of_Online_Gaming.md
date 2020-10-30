@@ -1,6 +1,6 @@
 ---
 title: "Growth of Online Gaming"
-date: 2020-08-07
+date: 2019-08-07
 classes: wide
 excerpt: "This paper is about analyzing growth of online gaming"
 ---
