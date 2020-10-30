@@ -2,7 +2,8 @@
 title: "Telco Customer Churning"
 date: 2020-09-26
 header:
-  image: "/images/customerchurn.png"
+  overlay_image: "/images/customerchurn.png"
+  overlay_filter: 0.5
 classes: wide
 excerpt: "This paper is about analyzing a dataset of customer churning in the Telecom industry"
 ---
