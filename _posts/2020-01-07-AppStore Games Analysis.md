@@ -1,6 +1,6 @@
 ---
 title: "AppStore Games Analysis"
-date: 2020-02-22
+date: 2020-01-07
 header:
   image: "/images/parker.jpg"
 classes: wide
