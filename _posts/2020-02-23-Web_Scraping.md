@@ -9,7 +9,7 @@ excerpt: "This paper is about web scraping using LXML and Requests packages."
 This was an attempt to scrape some data from an IMDB movie page.
 
 ### Conclusion
-I managed to extract data in the required format using Python Reqeests package and LXML package.
+I managed to extract data in the required format using Python Requests package and LXML package.
 
 ### Important Files
 Full report - [Web Scraping](https://github.com/dasun27/DSC/blob/master/files/Web%20Scraping.pdf)  
