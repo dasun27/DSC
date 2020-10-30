@@ -2,7 +2,7 @@
 title: "Growth of Online Gaming"
 date: 2020-01-05
 classes: wide
-excerpt: "This project analyzes a dataset from Dear Mona, Which State Has The Worst Drivers? Article"
+excerpt: "This paper is about analyzing growth of online gaming"
 ---
 
 You can find the full report here [Growth of Online Gaming](https://github.com/dasun27/DSC/blob/master/files/Growth%20of%20Online%20Gaming.pdf)
