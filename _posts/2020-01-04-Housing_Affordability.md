@@ -2,7 +2,7 @@
 title: "Housing Affordability"
 date: 2020-01-04
 classes: wide
-excerpt: "This project analyzes a dataset from Dear Mona, Which State Has The Worst Drivers? Article"
+excerpt: "This paper is about analyzing housing affordability in US"
 ---
 
 You can find the full report here [Housing Affordability](https://github.com/dasun27/DSC/blob/master/files/Housing%20Affordability.pdf)
