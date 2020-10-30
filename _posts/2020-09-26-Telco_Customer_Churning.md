@@ -131,6 +131,10 @@ print("Precision:",metrics.precision_score(y_test, y_pred))
 print("Recall:",metrics.recall_score(y_test, y_pred))
 ```
 
+> Accuracy: 0.7853492333901193
+> Precision: 0.6190476190476191
+> Recall: 0.4773218142548596
+
 • Next, I tried a KNN classifier. I tried a few different K values but k=5 seemed to be the optimal.  
 
 ```
@@ -141,6 +145,8 @@ y_pred = knn.predict(X_test)
 print("Accuracy:",metrics.accuracy_score(y_test, y_pred))print("Accuracy:",metrics.accuracy_score(y_test, y_pred))
 ```
 
+> Accuracy: 0.7671777399204998
+
 • Last, I tried a Random Forest classifier.  
 
 ```
@@ -150,6 +156,9 @@ clf.fit(X_train,y_train)
 y_pred=clf.predict(X_test)
 print("Accuracy:",metrics.accuracy_score(y_test, y_pred))
 ```
+
+> Accuracy: 0.7597955706984668
+
 
 ### Conclusion
 Customer churning is a major problem to many leading industries and Telecom is no exception. Due to the finite number of customers in a given area, it is important that Telcos retain their customers as it is really hard to win back those who churn away. Purpose of this analysis is to build a model to predict customer churning based on this dataset. However, this should only be used to gain some insight and as a steppingstone to a much larger production scale prediction model, as such a system should include many more factors than what is used in this analysis.
