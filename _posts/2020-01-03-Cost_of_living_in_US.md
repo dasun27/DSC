@@ -1,25 +1,13 @@
 ---
 title: "Cost of living in US"
-date: 2020-01-03
+date: 2019-11-13
 classes: wide
 excerpt: "This paper is about analyzing living costs in different states in US"
 ---
 
-You can find the full report here [Cost of living in US](https://github.com/dasun27/DSC/blob/master/files/Living%20Costs%20in%20Different%20States.docx)
-
-### Dataset
-The dataset used in my analysis is from Dear Mona, Which State Has The Worst Drivers? article, and was obtained through 
-[Kaggle](https://www.kaggle.com/fivethirtyeight/fivethirtyeight-bad-drivers-dataset).
-
-The dataset includes these variables:
-
-Variable | Source
----|---------
-State | N/A
-Number of drivers involved in fatal collisions per billion miles | National Highway Traffic Safety Administration, 2012
-Percentage Of Drivers Involved In Fatal Collisions Who Were Speeding | National Highway Traffic Safety Administration, 2009
-Car Insurance Premiums ($) | National Association of Insurance Commissioners, 2011
-Losses incurred by insurance companies for collisions per insured driver ($) | National Association of Insurance Commissioners, 2010
-
 ### Problem Statement and Hypothesis
 I wanted to find out if percentages of driver involved in fatal collisions who were alcohol-impaired may have influence on the percentages of driver involved in fatal collisions who were speeding.
+
+### Important Files
+Full report - [Cost of living in US](https://github.com/dasun27/DSC/blob/master/files/Living%20Costs%20in%20Different%20States.docx)
+Dataset - [Minnesota State Cost of Living Data](https://www.opendatanetwork.com/dataset/opendata.ramseycounty.us/baxh-fa9y)
