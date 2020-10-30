@@ -1,8 +1,6 @@
 ---
 title: "AppStore Games Analysis"
 date: 2020-01-07
-header:
-  image: "/images/parker.jpg"
 classes: wide
 excerpt: "This project analyzes a dataset from Dear Mona, Which State Has The Worst Drivers? Article"
 ---
