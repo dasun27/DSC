@@ -106,7 +106,7 @@ fig = go.Figure(data=data,layout=layout)
 py.iplot(fig)
 ```
 
-![PNG]("/images/p3.png")
+![PNG](/images/p3.png)
 
 • Finally, I started working on my ML models. I started with Logistic regression as the dependent variable is binary. I used the classes from SciKit Learn module.  
 
@@ -215,6 +215,3 @@ A survey conducted in 2019 on the reasons for customer churning in the Telecom i
 
 A research done by Rutgers university on Telecom customer churn prediction
 
-
-### Appendix - Complete Code
-Custo
