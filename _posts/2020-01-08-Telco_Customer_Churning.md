@@ -4,7 +4,7 @@ date: 2020-01-08
 header:
   image: "/images/parker.jpg"
 classes: wide
-excerpt: "This project analyzes a dataset from Dear Mona, Which State Has The Worst Drivers? Article"
+excerpt: "This paper is about analyzing a dataset of customer churning in the Telecom industry"
 ---
 
 You can find the full report here [Telco Customer Churning](https://github.com/dasun27/DSC/blob/master/files/Project_1_Report_Dasun_Wellawalage.pdf)
