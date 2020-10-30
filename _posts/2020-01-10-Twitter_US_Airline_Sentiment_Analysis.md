@@ -4,7 +4,7 @@ date: 2020-01-10
 header:
   image: "/images/parker.jpg"
 classes: wide
-excerpt: "This project analyzes a dataset from Dear Mona, Which State Has The Worst Drivers? Article"
+excerpt: "This paper is about analyzing a dataset of Tweets on US Airlines"
 ---
 
 You can find the full report here [Twitter US Airline Sentiment Analysis](https://github.com/dasun27/DSC/blob/master/files/Project_3_Report_Dasun_Wellawalage.pdf)
