@@ -47,7 +47,7 @@ axes[0].hist(data["tenure"], bins = binlist) # all records
 axes[1].hist(churned["tenure"], bins = binlist) # churned customers
 ```
 
-![PNG](./images/p1.png)  
+![PNG](../images/p1.png)  
 ![PNG](images/p2.png)
 
 •	Next, I wanted to check if having additional services (apart from Internet & Phone) have an impact on churning. For this, I created a new feature which was a count of how many additional services customers have. Based on that feature, customers with more than four additional services had very little tendency to churn. However, this is somewhat obvious as you would hesitate to make changes that involve a lot of work for you.  
