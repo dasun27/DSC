@@ -2,7 +2,7 @@
 title: "US Airline Safety"
 date: 2020-01-02
 classes: wide
-excerpt: "This project analyzes a dataset from Dear Mona, Which State Has The Worst Drivers? Article"
+excerpt: "This is an analysis on safety in the airline industry in America"
 ---
 
 You can find the full report here [US Airline Safety](https://github.com/dasun27/DSC/blob/master/files/US%20AIrline%20Safety.pptx)
