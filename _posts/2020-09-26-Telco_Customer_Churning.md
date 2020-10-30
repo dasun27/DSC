@@ -11,6 +11,31 @@ excerpt: "This paper is about analyzing a dataset of customer churning in the Te
 Customer churning is a major problem to many leading industries and Telecom is no exception. Due to the finite number of customers in a given area, it is important that Telecom companies retain their customers as it is really hard to win back those who churn away. Some studies have shown that it is way more profitable to retain customers than going after new customers. For this reason, many organizations now have a retention team specialized for retaining customers. Specifically, in the field of telecommunications, there are many attributes that would cause a customer to move out. The purpose of this analysis is to study some of those variables and figure out which ones have the most impact. 
 
 ### Method
+For this analysis I am using a dataset taken from Kaggle. Unfortunately, it doesn’t state which service provider it belongs to. However, this dataset consists of 7000+ records which is not huge, but it is still enough for us to perform some analysis. There are 21 variables in the dataset and most of them have binary or categorical values. There is a ‘Churn’ feature which is what we are trying to predict. I did some exploratory data analysis first followed by building models using three different methods to predict the churning probability. Below is a step by step guide to the methods I used to conduct this analysis.  
+
+1. Checking for null values and missing values – Most of the ML algorithms will give you errors if there are non-numeric values and even those that take categorical values will not tolerate missing or null values. In my dataset there were no missing or null values.  
+
+```
+data = pd.read_csv('datasets_13996_18858_WA_Fn-UseC_-Telco-Customer-Churn.csv')
+data.dtypes
+data.isnull().sum()
+```
+
+2.	Data Cleanup – There were a few features that needed a little clean up. For example, some features had a value 'No internet service' that gave an identical meaning to ‘No’ in that given context. I replaced those instances with ‘No’. I also replaced the 1s and 0s in the ‘SeniorCitizen’ column with ‘Yes’ & ‘No’ to match the other binary features in the dataset.  
+
+```
+# Converting 'SeniorCitizen' column to Yes/No to make it categorical
+data["SeniorCitizen"] = data["SeniorCitizen"].replace({1:"Yes",0:"No"})
+data["SeniorCitizen"] = data["SeniorCitizen"].astype(object)
+
+# Changing 'No internet service' value to 'No' in service columns as they mean the same
+services = ['OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 'TechSupport', 'StreamingTV', 'StreamingMovies']
+
+for x in services:
+    data[x]  = data[x].replace({'No internet service' : 'No'})
+```
+
+3.	Studying individual variables – I studied some of the features using histograms to get an idea about the distribution of those individual variables. I split the dataset into two categories based on the ‘Churn’ variable. Then I compared individual features both in the large dataset and in the ‘Churn’ dataset. Below are some of the features that had prominent differences.
 
 ### Conclusion
 Customer churning is a major problem to many leading industries and Telecom is no exception. Due to the finite number of customers in a given area, it is important that Telcos retain their customers as it is really hard to win back those who churn away. Purpose of this analysis is to build a model to predict customer churning based on this dataset. However, this should only be used to gain some insight and as a steppingstone to a much larger production scale prediction model, as such a system should include many more factors than what is used in this analysis.
