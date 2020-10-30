@@ -2,7 +2,7 @@
 title: "Chess Games Analysis"
 date: 2020-01-06
 classes: wide
-excerpt: "This project analyzes a dataset from Dear Mona, Which State Has The Worst Drivers? Article"
+excerpt: "This paper is about analyzing a dataset of chess games"
 ---
 
 You can find the full report here [Chess Games Analysis](https://github.com/dasun27/DSC/blob/master/files/Chess%20Games%20Analysis.docx)
