@@ -1,6 +1,6 @@
 ---
 title: "AppStore Games Analysis"
-date: 2020-01-07
+date: 2019-11-11
 classes: wide
 excerpt: "This paper is about analyzing a dataset of AppStore games"
 ---
