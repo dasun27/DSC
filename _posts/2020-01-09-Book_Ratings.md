@@ -7,7 +7,7 @@ classes: wide
 excerpt: "This project analyzes a dataset from Dear Mona, Which State Has The Worst Drivers? Article"
 ---
 
-You can find the full report here [Book Rating Analysis](https://github.com/dasun27/DSC/blob/master/files/Book_Ratings.pdf)
+You can find the full report here [Book Rating Analysis](https://github.com/dasun27/DSC/blob/master/files/Project_2_Report_Dasun_Wellawalage.pdf)
 
 ### Dataset
 The dataset used in my analysis is from Dear Mona, Which State Has The Worst Drivers? article, and was obtained through 
