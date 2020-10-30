@@ -5,7 +5,7 @@ classes: wide
 excerpt: "This project analyzes a dataset from Dear Mona, Which State Has The Worst Drivers? Article"
 ---
 
-You can find the full report here [AppStore Games Analysis](https://github.com/dasun27/DSC/blob/master/files/AppStore%20Games%20Analysis.pdf)
+You can find the full report here [Cost of living in US](https://github.com/dasun27/DSC/blob/master/files/Living%20Costs%20in%20Different%20States.docx)
 
 ### Dataset
 The dataset used in my analysis is from Dear Mona, Which State Has The Worst Drivers? article, and was obtained through 
