@@ -13,7 +13,7 @@ Customer churning is a major problem to many leading industries and Telecom is n
 ### Method
 For this analysis I am using a dataset taken from Kaggle. Unfortunately, it doesn’t state which service provider it belongs to. However, this dataset consists of 7000+ records which is not huge, but it is still enough for us to perform some analysis. There are 21 variables in the dataset and most of them have binary or categorical values. There is a ‘Churn’ feature which is what we are trying to predict. I did some exploratory data analysis first followed by building models using three different methods to predict the churning probability. Below is a step by step guide to the methods I used to conduct this analysis.  
 
-1. Checking for null values and missing values – Most of the ML algorithms will give you errors if there are non-numeric values and even those that take categorical values will not tolerate missing or null values. In my dataset there were no missing or null values.  
+•	Checking for null values and missing values – Most of the ML algorithms will give you errors if there are non-numeric values and even those that take categorical values will not tolerate missing or null values. In my dataset there were no missing or null values.  
 
 ```
 data = pd.read_csv('datasets_13996_18858_WA_Fn-UseC_-Telco-Customer-Churn.csv')
@@ -21,7 +21,7 @@ data.dtypes
 data.isnull().sum()
 ```
 
-2.	Data Cleanup – There were a few features that needed a little clean up. For example, some features had a value 'No internet service' that gave an identical meaning to ‘No’ in that given context. I replaced those instances with ‘No’. I also replaced the 1s and 0s in the ‘SeniorCitizen’ column with ‘Yes’ & ‘No’ to match the other binary features in the dataset.  
+•	Data Cleanup – There were a few features that needed a little clean up. For example, some features had a value 'No internet service' that gave an identical meaning to ‘No’ in that given context. I replaced those instances with ‘No’. I also replaced the 1s and 0s in the ‘SeniorCitizen’ column with ‘Yes’ & ‘No’ to match the other binary features in the dataset.  
 
 ```
 # Converting 'SeniorCitizen' column to Yes/No to make it categorical
@@ -35,7 +35,120 @@ for x in services:
     data[x]  = data[x].replace({'No internet service' : 'No'})
 ```
 
-3.	Studying individual variables – I studied some of the features using histograms to get an idea about the distribution of those individual variables. I split the dataset into two categories based on the ‘Churn’ variable. Then I compared individual features both in the large dataset and in the ‘Churn’ dataset. Below are some of the features that had prominent differences.
+•	Studying individual variables – I studied some of the features using histograms to get an idea about the distribution of those individual variables. I split the dataset into two categories based on the ‘Churn’ variable. Then I compared individual features both in the large dataset and in the ‘Churn’ dataset. Below are some of the features that had prominent differences.  
+
+```
+fig, axes = plt.subplots(nrows = 1, ncols = 2)
+binlist = [5, 10, 15, 20, 25 , 30, 35, 40, 45, 50, 55, 60, 65, 70]
+churned = data[data["Churn"] == "Yes"]
+
+axes[0].hist(data["tenure"], bins = binlist) # all records
+axes[1].hist(churned["tenure"], bins = binlist) # churned customers
+```
+
+![](/images/p1.png)
+![](/images/p2.png)
+
+•	Next, I wanted to check if having additional services (apart from Internet & Phone) have an impact on churning. For this, I created a new feature which was a count of how many additional services customers have. Based on that feature, customers with more than four additional services had very little tendency to churn. However, this is somewhat obvious as you would hesitate to make changes that involve a lot of work for you.  
+
+```
+svc = ['OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 'TechSupport', 'StreamingTV', 'StreamingMovies']
+
+for x,row in data.iterrows():
+    if row['InternetService'] == "No":
+        data.at[x,'num_svc'] = 0
+    else:
+        n = 0
+        for y in svc:
+            if row[y] == "Yes":
+                n += 1
+        data.at[x,'num_svc'] = n
+```
+
+•	I used a correlation matrix to visualize the impact each variable has on the other. According to that, ‘tenure’, ‘contract’, and ‘payment method’ seemed to have a big impact on the ‘Churn’ while other features also had some impact. I used ‘plotly’ package to create the correlation matrix.  
+
+```
+import plotly.offline as py
+py.init_notebook_mode(connected=True)
+import plotly.graph_objs as go
+
+correlation = datanum.corr()
+#tick labels
+matrix_cols = correlation.columns.tolist()
+#convert to array
+corr_array  = np.array(correlation)
+
+#Plotting
+trace = go.Heatmap(z = corr_array,
+                   x = matrix_cols,
+                   y = matrix_cols,
+                   colorscale = "Viridis",
+                   colorbar   = dict(title = "Pearson Correlation coefficient",
+                                     titleside = "right"
+                                    ) ,
+                  )
+
+layout = go.Layout(dict(title = "Correlation Matrix for variables",
+                        autosize = False,
+                        height  = 720,
+                        width   = 800,
+                        margin  = dict(r = 0 ,l = 210,
+                                       t = 25,b = 210,
+                                      ),
+                        yaxis   = dict(tickfont = dict(size = 9)),
+                        xaxis   = dict(tickfont = dict(size = 9))
+                       )
+                  )
+
+data = [trace]
+fig = go.Figure(data=data,layout=layout)
+py.iplot(fig)
+```
+
+![](/images/p3.png)
+
+• Finally, I started working on my ML models. I started with Logistic regression as the dependent variable is binary. I used the classes from SciKit Learn module.  
+
+```
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import confusion_matrix,accuracy_score,classification_report
+from sklearn import metrics
+
+feature_cols = ['tenure', 'Contract', 'PaymentMethod', 'MonthlyCharges', 'InternetService', 'Dependents', 'SeniorCitizen']
+X = datanum[feature_cols]
+y = datanum['Churn']
+
+X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.25,random_state=0)
+
+logreg = LogisticRegression()
+logreg.fit(X_train,y_train)
+y_pred=logreg.predict(X_test)
+
+print("Accuracy:",metrics.accuracy_score(y_test, y_pred))
+print("Precision:",metrics.precision_score(y_test, y_pred))
+print("Recall:",metrics.recall_score(y_test, y_pred))
+```
+
+• Next, I tried a KNN classifier. I tried a few different K values but k=5 seemed to be the optimal.  
+
+```
+from sklearn.neighbors import KNeighborsClassifier
+knn = KNeighborsClassifier(n_neighbors=5)
+knn.fit(X_train, y_train)
+y_pred = knn.predict(X_test)
+print("Accuracy:",metrics.accuracy_score(y_test, y_pred))print("Accuracy:",metrics.accuracy_score(y_test, y_pred))
+```
+
+• Last, I tried a Random Forest classifier.  
+
+```
+from sklearn.ensemble import RandomForestClassifier
+clf=RandomForestClassifier(n_estimators=100)
+clf.fit(X_train,y_train)
+y_pred=clf.predict(X_test)
+print("Accuracy:",metrics.accuracy_score(y_test, y_pred))
+```
 
 ### Conclusion
 Customer churning is a major problem to many leading industries and Telecom is no exception. Due to the finite number of customers in a given area, it is important that Telcos retain their customers as it is really hard to win back those who churn away. Purpose of this analysis is to build a model to predict customer churning based on this dataset. However, this should only be used to gain some insight and as a steppingstone to a much larger production scale prediction model, as such a system should include many more factors than what is used in this analysis.
