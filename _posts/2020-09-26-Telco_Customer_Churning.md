@@ -46,6 +46,7 @@ churned = data[data["Churn"] == "Yes"]
 axes[0].hist(data["tenure"], bins = binlist) # all records
 axes[1].hist(churned["tenure"], bins = binlist) # churned customers
 ```
+<img src="https://github.com/dasun27/DSC/blob/master/images/p1.png">
 ![PNG](https://github.com/dasun27/DSC/blob/master/images/p1.png)  
 ![PNG](/images/p1.png)  
 ![PNG](/images/p2.png)
