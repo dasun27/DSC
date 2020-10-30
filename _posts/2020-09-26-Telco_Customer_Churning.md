@@ -106,9 +106,7 @@ fig = go.Figure(data=data,layout=layout)
 py.iplot(fig)
 ```
 
-| ![PNG](/images/p3.png)   | 
-|:--:| 
-| *Figure 3: whatever |
+![PNG]("/images/p3.png")
 
 • Finally, I started working on my ML models. I started with Logistic regression as the dependent variable is binary. I used the classes from SciKit Learn module.  
 
