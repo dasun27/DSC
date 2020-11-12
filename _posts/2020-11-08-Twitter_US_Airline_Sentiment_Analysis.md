@@ -1,5 +1,5 @@
 ---
-title: "Twitter US Airline Sentiment Analysis (In Progress)"
+title: "Twitter US Airline Sentiment Analysis"
 date: 2020-11-08
 header:
   overlay_image: "/images/twitter.png"
