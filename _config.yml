@@ -20,7 +20,7 @@ title                    : "My Analytics Projects"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Dasun Wellawalage"
-description              : "A Network Engineer's attempt to learn analytics"
+description              : "I am an analytics enthusiast with a Network Engineering background. This is a collection of some of the studies I completed over the last 2 years. Hopefully you can learn some too."
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "dasun27/DSC" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
